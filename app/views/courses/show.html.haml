@@ -1,0 +1,15 @@
+%p
+  %b Title:
+  = @course.title
+
+%h2
+  = @course.announcements.count
+  Announcement
+=render @course.announcements
+
+%h3 Reply to thread
+= render "announcements/form"
+
+= link_to 'Edit', edit_course_path(@course)
+\|
+= link_to 'Back', courses_path
